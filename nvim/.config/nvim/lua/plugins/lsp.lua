@@ -89,26 +89,23 @@ return {
 
       -- NOTE: If you have a separate file for mason packages (e.g., lua/mason-packages.lua)
       --       you would require it here. For this example, we'll define a simple list.
-      local mason_packages_to_install = {
-        'stylua', -- Lua formatter
-        'black', -- Python formatter
-        'isort', -- Python import sorter
-        'prettier', -- General code formatter
-        'prettierd', -- Prettier daemon
-        -- Add any other tools you want Mason to manage here
-      }
+      -- Load your custom package list
+      local mason_packages_to_install = require 'mason-packages'
 
+      -- Ensure every package is installed manually (for fresh setups)
       for _, pkg_name in ipairs(mason_packages_to_install) do
         local ok_pkg, pkg = pcall(registry.get_package, pkg_name)
         if ok_pkg and not pkg:is_installed() then
-          print('Installing Mason package: ' .. pkg_name)
+          vim.notify('Installing Mason package: ' .. pkg_name)
           pkg:install()
         end
       end
 
-      local ensure_installed_lsp = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed_lsp, mason_packages_to_install) -- Ensure formatters are also installed
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed_lsp }
+      -- Use mason-tool-installer to keep them in sync
+      require('mason-tool-installer').setup {
+        ensure_installed = mason_packages_to_install,
+        run_on_start = true,
+      }
 
       -- Configure mason-lspconfig to set up LSP servers
       require('mason-lspconfig').setup {

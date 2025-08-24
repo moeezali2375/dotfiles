@@ -3,6 +3,7 @@
 require 'config'
 require 'keymaps'
 require 'autocommands'
+require 'usercommands'
 
 -- Bootstrap lazy.nvim
 -- This section checks if lazy.nvim is installed and installs it if not.
