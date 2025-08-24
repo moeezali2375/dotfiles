@@ -92,20 +92,13 @@ return {
       -- Load your custom package list
       local mason_packages_to_install = require 'mason-packages'
 
-      -- Ensure every package is installed manually (for fresh setups)
-      for _, pkg_name in ipairs(mason_packages_to_install) do
-        local ok_pkg, pkg = pcall(registry.get_package, pkg_name)
-        if ok_pkg and not pkg:is_installed() then
-          vim.notify('Installing Mason package: ' .. pkg_name)
-          pkg:install()
-        end
-      end
-
       -- Use mason-tool-installer to keep them in sync
       require('mason-tool-installer').setup {
         ensure_installed = mason_packages_to_install,
         run_on_start = true,
       }
+
+      require('mason-auto-sync').setup()
 
       -- Configure mason-lspconfig to set up LSP servers
       require('mason-lspconfig').setup {
