@@ -7,6 +7,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ------------------------------
+# Prompt / Theme
+# ------------------------------
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ------------------------------
 # Environment Setup
 # ------------------------------
 
@@ -29,11 +35,6 @@ export NVM_DIR="$HOME/.nvm"
 # ------------------------------
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
 
-# ------------------------------
-# Prompt / Theme
-# ------------------------------
-source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 # ------------------------------
