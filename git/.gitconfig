@@ -1,0 +1,11 @@
+[user]
+	name = moeezali2375
+	email = moeezali2375@gmail.com
+[init]
+	defaultBranch = main
+[alias]
+	l = log --oneline
+	s = status
+[core]
+	excludesfile = /Users/moeezali/.gitignore_global
+	ignorecase = true
