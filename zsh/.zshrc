@@ -19,19 +19,10 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-# Paths
+
 export NVM_DIR="$HOME/.nvm"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin:$PATH"
-
-# Extra PATHs (macOS Postgres, Cryptex, etc.)
-PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
-
-# NVM + Pyenv
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
 # ------------------------------
 # Aliases
