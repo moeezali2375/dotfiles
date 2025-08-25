@@ -3,7 +3,6 @@ return {
   'prisma-language-server',
   'commitlint',
   'sqls',
-  'angular-language-server',
   'css-lsp',
   'eslint-lsp',
   'clangd',

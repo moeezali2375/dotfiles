@@ -100,6 +100,11 @@ Feel free to modify these files to suit your preferences and workflow.
 
 ---
 
+## Code Folding
+
+If code folding in TypeScript files does not work, it is most likely due to the wrong LSP being attached.
+For example, the Angular language server (`angularls`) may attach itself in a React project, which breaks folding providers like UFO.
+
 ## Contributing
 
 If you find this configuration useful or have suggestions for improvements, feel free to open an issue or submit a pull request!
