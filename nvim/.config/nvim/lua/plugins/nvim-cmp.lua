@@ -107,6 +107,12 @@ return {
           { name = 'emoji' },
         },
       }
+      cmp.setup.filetype({ 'sql', 'mysql', 'psql' }, {
+        sources = {
+          { name = 'vim-dadbod-completion' },
+          { name = 'buffer' },
+        },
+      })
     end,
   },
 }
