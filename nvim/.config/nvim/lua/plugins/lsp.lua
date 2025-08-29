@@ -92,9 +92,17 @@ return {
       -- Load your custom package list
       local mason_packages_to_install = require 'mason-packages'
 
+      -- ensure stylua is always the first in the list
+      local ensure_installed = { 'stylua' }
+      for _, pkg in ipairs(mason_packages_to_install) do
+        if pkg ~= 'stylua' then
+          table.insert(ensure_installed, pkg)
+        end
+      end
+
       -- Use mason-tool-installer to keep them in sync
       require('mason-tool-installer').setup {
-        ensure_installed = mason_packages_to_install,
+        ensure_installed = ensure_installed,
         run_on_start = true,
       }
 
