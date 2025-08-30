@@ -71,6 +71,11 @@ fi
 # Plugins (must be last!)
 # Loads plugins from their Homebrew-managed locations.
 # ------------------------------
+# Make sure you've installed it with: brew install zsh-vi-mode
+if [[ -f "$HOMEBREW_PREFIX/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh" ]]; then
+  source "$HOMEBREW_PREFIX/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+fi
+
 if [[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
   source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
