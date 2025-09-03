@@ -22,7 +22,9 @@ return {
             config = function()
               require('luasnip.loaders.from_vscode').lazy_load()
               -- Load snippets from your custom snippets directory (e.g., ~/.config/nvim/lua/snippets/)
-              require('luasnip.loaders.from_lua').load { paths = { './lua/snippets/' } }
+              require('luasnip.loaders.from_lua').load {
+                paths = { vim.fn.expand '~/dotfiles/nvim/.config/nvim/lua/snippets' },
+              }
             end,
           },
         },

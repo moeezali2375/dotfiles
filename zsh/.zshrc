@@ -40,6 +40,11 @@ if [[ -d "$HOMEBREW_PREFIX/opt/nvm" ]]; then
   [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
 fi
 
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
 # ------------------------------
 # Aliases
 # ------------------------------
