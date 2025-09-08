@@ -78,9 +78,25 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+-- vim.cmd [[
+--   highlight DiffAdd    cterm=bold ctermbg=green   guibg=green
+--   highlight DiffChange cterm=bold ctermbg=yellow  guibg=yellow
+--   highlight DiffDelete cterm=bold ctermbg=red     guibg=red
+--   highlight DiffText   cterm=bold ctermbg=blue    guibg=blue
+-- ]]
+
+-- vim.cmd [[
+--   " Stronger, more visible diff highlights for Tokyonight
+--   highlight DiffAdd    cterm=bold gui=bold guibg=#203A29 guifg=#73DACA
+--   highlight DiffChange cterm=bold gui=bold guibg=#2E3350 guifg=#7AA2F7
+--   highlight DiffDelete cterm=bold gui=bold guibg=#4B2B2E guifg=#F7768E
+--   highlight DiffText   cterm=bold gui=bold guibg=#394B70 guifg=#BB9AF7
+-- ]]
+
 vim.cmd [[
-  highlight DiffAdd    cterm=bold ctermbg=green   guibg=green
-  highlight DiffChange cterm=bold ctermbg=yellow  guibg=yellow
-  highlight DiffDelete cterm=bold ctermbg=red     guibg=red
-  highlight DiffText   cterm=bold ctermbg=blue    guibg=blue
+  " Extra popping diff highlights for Tokyonight
+  highlight DiffAdd    cterm=bold gui=bold guibg=#1A2E24 guifg=#9ECE6A
+  highlight DiffChange cterm=bold gui=bold guibg=#2B1D50 guifg=#7AA2F7
+  highlight DiffDelete cterm=bold gui=bold guibg=#3F2D3D guifg=#F7768E
+  highlight DiffText   cterm=bold gui=bold guibg=#5A3E9E guifg=#C0CAF5
 ]]
