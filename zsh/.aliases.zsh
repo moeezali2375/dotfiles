@@ -1,5 +1,6 @@
 
 # Navigation
+alias cddo="cd ~/dotfiles/"
 alias cdd="cd ~/Developer/dubizzle/"
 alias cdn="cd ~/Developer/novasoft/"
 
@@ -8,6 +9,7 @@ alias cdn="cd ~/Developer/novasoft/"
 alias ll="ls -alF"
 alias la="ls -A"
 alias l="ls -CF"
+alias c="clear"
 
 # Neovim
 alias astro-nvim='NVIM_APPNAME=astro-nvim nvim'
