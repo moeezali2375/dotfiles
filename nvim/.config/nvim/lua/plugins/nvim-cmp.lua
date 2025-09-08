@@ -1,4 +1,12 @@
 return {
+  { 'saadparwaiz1/cmp_luasnip', dependencies = { 'hrsh7th/nvim-cmp' } },
+  { 'hrsh7th/cmp-nvim-lsp', dependencies = { 'hrsh7th/nvim-cmp' } },
+  { 'hrsh7th/cmp-path', dependencies = { 'hrsh7th/nvim-cmp' } },
+  { 'hrsh7th/cmp-buffer', dependencies = { 'hrsh7th/nvim-cmp' } },
+  { 'hrsh7th/cmp-nvim-lsp-signature-help', dependencies = { 'hrsh7th/nvim-cmp' } },
+  { 'hrsh7th/cmp-cmdline', dependencies = { 'hrsh7th/nvim-cmp' } },
+  { 'hrsh7th/cmp-emoji', dependencies = { 'hrsh7th/nvim-cmp' } },
+
   {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter', -- Load the plugin when entering insert mode
@@ -29,15 +37,7 @@ return {
           },
         },
       },
-      'saadparwaiz1/cmp_luasnip', -- nvim-cmp source for LuaSnip
-
-      -- Other nvim-cmp sources
-      'hrsh7th/cmp-nvim-lsp', -- LSP source (for completions from language servers)
-      'hrsh7th/cmp-path', -- File path completion
-      'hrsh7th/cmp-buffer', -- Buffer words completion (uncomment if desired)
-      'hrsh7th/cmp-nvim-lsp-signature-help',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-emoji',
+      --sources are moveed above (major update after dotfiles fixing sources not being loaded)
     },
     config = function()
       local cmp = require 'cmp'
