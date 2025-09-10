@@ -32,6 +32,9 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
+# fzf
+eval "$(fzf --zsh)"
+
 # NVM (Node Version Manager)
 # Loads NVM from the Homebrew-managed location.
 export NVM_DIR="$HOME/.nvm"
