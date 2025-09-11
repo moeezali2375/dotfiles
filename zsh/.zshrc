@@ -35,6 +35,12 @@ setopt hist_verify
 # fzf
 eval "$(fzf --zsh)"
 
+# ngrok
+if command -v ngrok &>/dev/null; then
+    eval "$(ngrok completion)"
+  fi
+
+
 # NVM (Node Version Manager)
 # Loads NVM from the Homebrew-managed location.
 export NVM_DIR="$HOME/.nvm"
