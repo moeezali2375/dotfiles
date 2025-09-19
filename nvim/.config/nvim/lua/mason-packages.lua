@@ -1,5 +1,7 @@
 return {
   'lua-language-server',
+  'phpstan',
+  'pint',
   'prisma-language-server',
   'commitlint',
   'sqls',
@@ -24,6 +26,7 @@ return {
   'django-template-lsp',
   'shfmt',
   'golangci-lint',
+  'intelephense',
   'tree-sitter-cli',
   'prettierd',
   'shellcheck',
