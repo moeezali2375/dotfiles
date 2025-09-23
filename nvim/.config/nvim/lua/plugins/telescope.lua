@@ -76,6 +76,10 @@ return {
           '!**/.DS_Store',
           '--glob',
           '!**/dist/*',
+          '--glob',
+          '!**/vendor/*',
+          '--glob',
+          '!**/bootstrap/cache/*',
         }
       else
         -- Fallback if rg is not found (e.g., use the default 'find' command)

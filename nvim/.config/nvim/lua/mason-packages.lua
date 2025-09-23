@@ -2,6 +2,7 @@ return {
   'lua-language-server',
   'phpstan',
   'pint',
+  'php-cs-fixer',
   'prisma-language-server',
   'commitlint',
   'sqls',
