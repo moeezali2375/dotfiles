@@ -32,7 +32,7 @@ export default {
     },
     {
       match: finicky.matchHostnames(["app.clickup.com"]),
-      url: ({ url }) => ({
+      url: (url) => ({
         ...url,
         host: "",
         protocol: "clickup",
@@ -40,9 +40,19 @@ export default {
       }),
     },
   ],
+
   handlers: [
+    // 💻 Open any GitHub link under github.com/bayutuae in Chrome
     {
-      match: ({ url }) => url.protocol === "clickup",
+      match: (url) =>
+        url.hostname === "github.com" &&
+        url.href.startsWith("https://github.com/bayutuae"),
+      browser: "Google Chrome",
+    },
+
+    // 🧩 Open ClickUp deep links in the ClickUp app
+    {
+      match: (url) => url.protocol === "clickup:",
       browser: "ClickUp",
     },
   ],
