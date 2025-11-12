@@ -7,19 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ------------------------------
-# Homebrew Setup (Cross-Platform for Intel & Apple Silicon)
-# This block detects the correct Homebrew path and sets up the shell.
-# The 'brew shellenv' command also exports $HOMEBREW_PREFIX, which we use later.
-# ------------------------------
-if [[ -x /opt/homebrew/bin/brew ]]; then
-  # Path for Apple Silicon (M1, M2, M3, etc.)
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [[ -x /usr/local/bin/brew ]]; then
-  # Path for Intel Macs
-  eval "$(/usr/local/bin/brew shellenv)"
-fi
-
-# ------------------------------
 # Environment Setup
 # ------------------------------
 

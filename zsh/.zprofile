@@ -6,3 +6,5 @@ export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
 # Postgres.app
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
