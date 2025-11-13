@@ -15,8 +15,8 @@ alias c="clear"
 alias astro-nvim='NVIM_APPNAME=astro-nvim nvim'
 
 # brew
-alias brew-dump='brew bundle dump --file=~/dotfiles/brew/.Brewfile --force --no-vscode'
-alias brew-install='brew bundle --file=~/dotfiles/brew/.Brewfile --force'
+alias brew-dump='brew bundle dump --file=~/dotfiles/brew/Brewfile --force --no-vscode'
+alias brew-install='brew bundle --file=~/dotfiles/brew/Brewfile --force'
 
 # Gitignore generator
 gi() { curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$@" ; }
