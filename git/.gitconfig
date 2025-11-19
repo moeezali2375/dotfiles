@@ -9,3 +9,5 @@
 [core]
 	excludesfile = /Users/moeezali/.gitignore_global
 	ignorecase = true
+[push]
+	autoSetupRemote = true
