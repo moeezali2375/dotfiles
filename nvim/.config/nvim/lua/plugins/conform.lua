@@ -28,6 +28,7 @@ return {
         sql = { 'sql_formatter' },
         mysql = { 'sql_formatter' },
         postgresql = { 'sql_formatter' },
+        php = { 'pint', 'intelephense', stop_after_first = true },
       },
 
       formatters = {
