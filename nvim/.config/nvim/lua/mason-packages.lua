@@ -10,6 +10,7 @@ return {
   'eslint-lsp',
   'clangd',
   'dockerfile-language-server',
+  'astro-language-server',
   'dotenv-linter',
   'prettier',
   'vim-language-server',

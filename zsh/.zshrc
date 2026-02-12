@@ -80,3 +80,4 @@ fi
 
 # Added by Antigravity
 export PATH="/Users/moeezali/.antigravity/antigravity/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
