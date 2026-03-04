@@ -8,3 +8,6 @@ export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
