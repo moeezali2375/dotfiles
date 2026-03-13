@@ -11,6 +11,7 @@ return {
   'clangd',
   'dockerfile-language-server',
   'astro-language-server',
+  'nginx-config-formatter',
   'dotenv-linter',
   'prettier',
   'vim-language-server',
