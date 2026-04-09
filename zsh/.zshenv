@@ -6,3 +6,5 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 # PATH setup (keep short here, extend in zprofile)
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+export TMUX_ENV="LOCAL"
