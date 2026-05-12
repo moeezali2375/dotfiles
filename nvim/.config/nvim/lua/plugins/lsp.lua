@@ -76,6 +76,13 @@ return {
             },
           },
         },
+        ts_ls = {
+          single_file_support = true,
+          root_dir = function(fname)
+            return require('lspconfig.util').root_pattern('package.json', 'tsconfig.json', 'jsconfig.json', '.git')(fname)
+          end,
+          filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'typescript.tsx' },
+        },
       }
 
       -- Mason setup for managing LSP servers and tools
