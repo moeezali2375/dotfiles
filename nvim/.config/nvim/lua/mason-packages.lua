@@ -39,6 +39,7 @@ return {
   'dot-language-server',
   'json-lsp',
   'jsonld-lsp',
+  'xmlformatter',
   'shopify-cli',
   'css-variables-language-server',
   'black',

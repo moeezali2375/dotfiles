@@ -11,3 +11,7 @@
 	ignorecase = true
 [push]
 	autoSetupRemote = true
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = false

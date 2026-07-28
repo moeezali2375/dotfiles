@@ -81,3 +81,13 @@ fi
 # Added by Antigravity
 export PATH="/Users/moeezali/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/moeezali/.antigravity-ide/antigravity-ide/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/moeezali/.antigravity-ide/antigravity-ide/bin:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/moeezali/.local/bin:$PATH"

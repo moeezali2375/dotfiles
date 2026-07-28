@@ -94,21 +94,41 @@ return {
           end, { 'i', 's' }), -- Applies in Insert and Snippet modes
         },
 
-        -- Sources for completion suggestions
-        sources = {
+        -- Sources for completion suggestions grouped by priority
+        sources = cmp.config.sources({
           {
             name = 'lazydev', -- Provided by lazydev.nvim for Lua development
             group_index = 0, -- Set group index to 0 to skip LuaLS completions as lazydev recommends it
           },
           { name = 'nvim_lsp' }, -- Suggestions from Language Servers
           { name = 'luasnip' }, -- Suggestions from snippets
-          { name = 'path' }, -- File path suggestions
-          { name = 'buffer' }, -- Buffer word suggestions (uncomment if desired)
           { name = 'nvim_lsp_signature_help' },
-          { name = 'cmdline' },
+        }, {
+          { name = 'path' }, -- File path suggestions
+          { name = 'buffer' }, -- Buffer word suggestions
           { name = 'emoji' },
-        },
+        }),
       }
+
+      -- Use buffer source for `/` and `?`
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+
+      -- Use cmdline & path source for ':'
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          { name = 'cmdline' }
+        }),
+        matching = { disallow_symbol_nonprefix_matching = false }
+      })
+
       cmp.setup.filetype({ 'sql', 'mysql', 'psql' }, {
         sources = {
           { name = 'vim-dadbod-completion' },
