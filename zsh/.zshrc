@@ -36,9 +36,10 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 # ------------------------------
-# Aliases
+# Aliases & Secrets
 # ------------------------------
-# Source custom aliases from a separate file.
+# Source custom aliases and secrets from separate files.
+[[ -f ~/.secrets.zsh ]] && source ~/.secrets.zsh
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
 
 # ------------------------------
@@ -81,9 +82,6 @@ fi
 # Added by Antigravity
 export PATH="/Users/moeezali/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
-
-# Added by Antigravity IDE
-export PATH="/Users/moeezali/.antigravity-ide/antigravity-ide/bin:$PATH"
 
 # Added by Antigravity IDE
 export PATH="/Users/moeezali/.antigravity-ide/antigravity-ide/bin:$PATH"

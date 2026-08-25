@@ -7,7 +7,7 @@
 	l = log --oneline
 	s = status
 [core]
-	excludesfile = /Users/moeezali/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	ignorecase = true
 [push]
 	autoSetupRemote = true

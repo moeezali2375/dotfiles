@@ -24,7 +24,4 @@ gi() { curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$@" ; }
 #git
 alias gs='git status'
 
-#AWS
-alias aws="ssh -i ~/.keys/Moeez-Ali-V3.pem ubuntu@ec2-16-171-138-184.eu-north-1.compute.amazonaws.com"
-alias aws4="ssh -i ~/.keys/Moeez-Ali-V4.pem ubuntu@ec2-13-51-200-194.eu-north-1.compute.amazonaws.com"
 
