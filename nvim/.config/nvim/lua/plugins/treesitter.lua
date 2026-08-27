@@ -2,6 +2,7 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master',
     build = ':TSUpdate', -- Command to run after installation to fetch parsers
     main = 'nvim-treesitter.configs', -- Explicitly set the main module for options
     opts = {

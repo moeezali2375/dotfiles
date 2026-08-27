@@ -1,9 +1,9 @@
 return {
-    -- Treesitter for syntax highlighting and context
-    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
-
     -- Context-aware comment strings
-    { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    {
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    },
 
     -- nvim-comment plugin with context support
     {
