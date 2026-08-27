@@ -1,3 +1,6 @@
+[user]
+	name = moeezali2375
+	email = moeezali2375@gmail.com
 [init]
 	defaultBranch = main
 [alias]
@@ -12,3 +15,7 @@
 	tool = nvimdiff
 [difftool]
 	prompt = false
+
+[includeIf "gitdir:~/Developer/dubizzle/"]
+	path = ~/.gitconfig_dubizzle
+
