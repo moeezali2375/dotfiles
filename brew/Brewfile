@@ -1,90 +1,156 @@
 tap "alexstrnik/browserino"
-tap "anomalyco/tap"
-tap "cloudflare/cloudflare"
-tap "mongodb/brew"
 tap "shivammathur/php"
 tap "xykong/tap"
-brew "libtiff"
-brew "little-cms2"
-brew "webp"
-brew "jpeg-xl"
+# Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# C library implementing the SSH2 protocol
 brew "libssh2"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Get/set bluetooth power and discoverable state
 brew "blueutil"
-brew "cloudflared"
+# Cross-platform make
 brew "cmake"
+# Libraries to talk to Microsoft SQL Server and Sybase databases
 brew "freetds"
+# Library for encoding and decoding .avif files
 brew "libavif"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
+# TIFF library and utilities
+brew "libtiff"
+# Graphics library to dynamically manipulate images
 brew "gd"
-brew "php", restart_service: :changed
+# General-purpose scripting language
+brew "php", restart_service: :changed, link: false
+# Dependency Manager for PHP
 brew "composer"
+# Isolated development environments using Docker
 brew "docker-compose"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
 brew "gcc"
-brew "gemini-cli"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Render markdown on the CLI
 brew "glow"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Comprehensive RPC framework
 brew "ice"
+# Image loading and rendering library
 brew "imlib2"
+# Top clone for MySQL
 brew "innotop"
+# Color management engine supporting ICC profiles
+brew "little-cms2"
+# New file format for still image compression
+brew "jpeg-xl"
+# Package manager for the Lua programming language
 brew "luarocks"
+# Open source relational database management system
 brew "mysql@8.0", restart_service: :changed
+# NCurses Disk Usage
 brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
+# Manage multiple Node.js versions
 brew "nvm"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Highly capable, feature-rich programming language
 brew "perl"
+# General-purpose scripting language
 brew "php@8.1"
+# General-purpose scripting language
 brew "php@8.4", link: true
+# Theme for zsh
 brew "powerlevel10k"
+# PlayStation Portable emulator
 brew "ppsspp"
+# Python version management
 brew "pyenv"
+# Persistent key-value database, with built-in net interface
 brew "redis"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Terminal multiplexer
 brew "tmux"
+# CLI tool that moves files or folder to the trash
 brew "trash"
+# Language for application scale JavaScript development
 brew "typescript"
+# JavaScript package manager
 brew "yarn"
+# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Better and friendly vi(vim) mode plugin for ZSH
 brew "zsh-vi-mode"
-brew "anomalyco/tap/opencode"
-brew "mongodb/brew/mongodb-community@7.0"
+# GPU-accelerated terminal emulator
 cask "alacritty"
+# Terminal interface for Antigravity agents
+cask "antigravity-cli"
+# Allows connection to a computer remotely
 cask "anydesk"
+# Cross platform SQL editor and database management app
 cask "beekeeper-studio"
-cask "alexstrnik/browserino/browserino"
+# Browserino is a tiny browser selector for MacOS written in SwiftUI
+cask "alexstrnik/browserino/browserino", trusted: true
+# Write, edit, and chat about your code with AI
 cask "cursor"
+# Universal database tool and SQL client
 cask "dbeaver-community"
-cask "dockdoor"
+# App to build and share containerised applications and microservices
 cask "docker-desktop"
+# Per-application volume mixer, equalizer, and audio router
 cask "finetune"
+# Utility for customizing which browser to start
 cask "finicky"
-cask "xykong/tap/flux-markdown"
+# Markdown previews in Finder QuickLook with diagrams and math
+cask "xykong/tap/flux-markdown", trusted: true
 cask "font-cousine-nerd-font"
 cask "font-hack-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Laravel and PHP development environment manager
 cask "herd"
+# Convert your caps lock key or any of your modifier keys to the hyper key
 cask "hyperkey"
+# Free and open-source media player
 cask "iina"
+# Menu bar manager
 cask "jordanbaird-ice"
+# Open-source keystroke visualiser
 cask "keycastr"
+# Open-source firewall to block unknown outgoing connections
 cask "lulu"
+# Clipboard manager
 cask "maccy"
-cask "meld"
+# Interactive tool for analyzing MongoDB data
 cask "mongodb-compass"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# App that enables mouse-free UI interaction
 cask "shortcat"
+# Git client
 cask "sublime-merge"
-cask "warp"
+# Multiplayer code editor
 cask "zed"
 go "github.com/bootdotdev/bootdev"
