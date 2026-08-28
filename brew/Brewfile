@@ -116,8 +116,6 @@ cask "discord"
 cask "docker-desktop"
 # Per-application volume mixer, equalizer, and audio router
 cask "finetune"
-# Utility for customizing which browser to start
-cask "finicky"
 # Markdown previews in Finder QuickLook with diagrams and math
 cask "xykong/tap/flux-markdown", trusted: true
 cask "font-cousine-nerd-font"

@@ -26,6 +26,10 @@ alias stats-load='defaults import eu.exelban.Stats ~/dotfiles/stats/eu.exelban.S
 alias rectangle-dump='defaults export com.knollsoft.Rectangle ~/dotfiles/rectangle/com.knollsoft.Rectangle.plist && plutil -convert xml1 ~/dotfiles/rectangle/com.knollsoft.Rectangle.plist'
 alias rectangle-load='defaults import com.knollsoft.Rectangle ~/dotfiles/rectangle/com.knollsoft.Rectangle.plist && killall Rectangle 2>/dev/null; open -a Rectangle'
 
+# browserino
+alias browserino-dump='defaults export xyz.alexstrnik.Browserino ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist && plutil -convert xml1 ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist'
+alias browserino-load='[[ -d /Applications/ClickUpRouter.app ] -d /Applications/ClickUpRouter.app ] || ~/dotfiles/browserino/ClickUpRouter/build.sh; [ -d "/Applications/Chrome (Work).app" ] || ~/dotfiles/browserino/ChromeWork/build.sh; defaults import xyz.alexstrnik.Browserino ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist && killall Browserino 2>/dev/null; open -a Browserino'
+
 
 # Gitignore generator
 gi() { curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$@" ; }

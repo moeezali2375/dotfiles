@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSWindow Frame prompt_Size</key>
+	<string>616 393 250 200 0 0 1512 949 </string>
+	<key>browsers</key>
+	<string>["file:\/\/\/Applications\/Google%20Chrome.app\/","file:\/\/\/Applications\/Chrome%20(Work).app\/","file:\/\/\/System\/Volumes\/Preboot\/Cryptexes\/App\/System\/Applications\/Safari.app\/"]</string>
+	<key>directories</key>
+	<string>[{"directoryPath":"\/Applications"}]</string>
+	<key>rules</key>
+	<string>[{"regex":"clickup","app":"file:\/\/\/Applications\/ClickUpRouter.app\/"},{"regex":"bayutuae","app":"file:\/\/\/Applications\/Chrome%20(Work).app\/"}]</string>
+	<key>shortcuts</key>
+	<string>{"com.google.Chrome":"G","com.moeez.ChromeWork":"W","com.apple.Safari":"S"}</string>
+	<key>showInMenuBar</key>
+	<false/>
+</dict>
+</plist>
