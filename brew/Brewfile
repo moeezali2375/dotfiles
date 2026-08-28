@@ -130,8 +130,6 @@ cask "herd"
 cask "hyperkey"
 # Free and open-source media player
 cask "iina"
-# Menu bar manager
-cask "jordanbaird-ice"
 # Open-source keystroke visualiser
 cask "keycastr"
 # Open-source firewall to block unknown outgoing connections
