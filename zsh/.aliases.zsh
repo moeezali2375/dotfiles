@@ -28,7 +28,19 @@ alias rectangle-load='defaults import com.knollsoft.Rectangle ~/dotfiles/rectang
 
 # browserino
 alias browserino-dump='defaults export xyz.alexstrnik.Browserino ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist && plutil -convert xml1 ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist'
-alias browserino-load='[[ -d /Applications/ClickUpRouter.app ] -d /Applications/ClickUpRouter.app ] || ~/dotfiles/browserino/ClickUpRouter/build.sh; [ -d "/Applications/Chrome (Work).app" ] || ~/dotfiles/browserino/ChromeWork/build.sh; defaults import xyz.alexstrnik.Browserino ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist && killall Browserino 2>/dev/null; open -a Browserino'
+alias browserino-load='[ -d /Applications/ClickUpRouter.app ] || ~/dotfiles/browserino/ClickUpRouter/build.sh; [ -d "/Applications/Chrome (Work).app" ] || ~/dotfiles/browserino/ChromeWork/build.sh; defaults import xyz.alexstrnik.Browserino ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist && killall Browserino 2>/dev/null; open -a Browserino'
+
+# maccy
+alias maccy-dump='defaults export org.p0deje.Maccy ~/dotfiles/maccy/org.p0deje.Maccy.plist && plutil -convert xml1 ~/dotfiles/maccy/org.p0deje.Maccy.plist'
+alias maccy-load='defaults import org.p0deje.Maccy ~/dotfiles/maccy/org.p0deje.Maccy.plist && killall Maccy 2>/dev/null; open -a Maccy'
+
+# thaw
+alias thaw-dump='defaults export com.stonerl.Thaw ~/dotfiles/thaw/com.stonerl.Thaw.plist && plutil -convert xml1 ~/dotfiles/thaw/com.stonerl.Thaw.plist'
+alias thaw-load='defaults import com.stonerl.Thaw ~/dotfiles/thaw/com.stonerl.Thaw.plist && killall Thaw 2>/dev/null; open -a Thaw'
+
+# shortcat
+alias shortcat-dump='defaults export com.sproutcube.Shortcat ~/dotfiles/shortcat/com.sproutcube.Shortcat.plist && plutil -convert xml1 ~/dotfiles/shortcat/com.sproutcube.Shortcat.plist'
+alias shortcat-load='defaults import com.sproutcube.Shortcat ~/dotfiles/shortcat/com.sproutcube.Shortcat.plist && killall Shortcat 2>/dev/null; open -a Shortcat'
 
 
 # Gitignore generator

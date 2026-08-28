@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeyboardShortcuts_delete</key>
+	<string>{"carbonKeyCode":51,"carbonModifiers":2048}</string>
+	<key>KeyboardShortcuts_pin</key>
+	<string>{"carbonKeyCode":35,"carbonModifiers":2048}</string>
+	<key>KeyboardShortcuts_popup</key>
+	<string>{"carbonKeyCode":9,"carbonModifiers":768}</string>
+	<key>KeyboardShortcuts_togglePreview</key>
+	<string>{"carbonKeyCode":49,"carbonModifiers":4096}</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{880, 448}</string>
+	<key>NSOSPLastRootDirectory</key>
+	<data>
+	Ym9vawwCAAAAAAUQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	AAAAAAAAAAAAAAAAABABAAAEAAAAAwMAAAAAACAMAAAAAQEAAEFwcGxpY2F0aW9ucwQA
+	AAABBgAAEAAAAAgAAAAEAwAAQkgAAAAAAAAEAAAAAQYAADAAAAAIAAAAAAQAAEHH34Av
+	AAAAGAAAAAECAAACAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAQUAAAgAAAABCQAA
+	ZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAAAFChG3MAAAAkAAAAAQEA
+	ADMyRUE0QUFCLUI5MDctNDU3Ri1CRUZFLTgyMjYyQjQ5QTEyORgAAAABAgAAgQAAAAEA
+	AADvEwAAAQAAAAAAAAAAAAAAAQAAAAEBAAAvAAAAtAAAAP7///8BAAAAAAAAAA4AAAAE
+	EAAAJAAAAAAAAAAFEAAAQAAAAAAAAAAQEAAAXAAAAAAAAABAEAAATAAAAAAAAAACIAAA
+	BAEAAAAAAAAFIAAAhAAAAAAAAAAQIAAAlAAAAAAAAAARIAAAuAAAAAAAAAASIAAAqAAA
+	AAAAAAATIAAATAAAAAAAAAAgIAAA5AAAAAAAAAAwIAAAfAAAAAAAAAAB0AAAfAAAAAAA
+	AAAQ0AAABAAAAAAAAAA=
+	</data>
+	<key>NSStatusItem Preferred Position Item-0</key>
+	<real>5632</real>
+	<key>NSStatusItem VisibleCC Item-1</key>
+	<false/>
+	<key>NSWindow Frame com.sindresorhus.Settings.FrameAutosaveName</key>
+	<string>501 396 532 464 0 0 1512 949 </string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
+	<key>SULastCheckTime</key>
+	<date>2026-08-27T21:31:31Z</date>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>1393017695</integer>
+	<key>enabledPasteboardTypes</key>
+	<array>
+		<string>public.rtf</string>
+		<string>public.utf8-plain-text</string>
+		<string>public.png</string>
+		<string>public.jpeg</string>
+		<string>public.file-url</string>
+		<string>public.tiff</string>
+		<string>public.html</string>
+		<string>public.heic</string>
+	</array>
+	<key>ignoredApps</key>
+	<array>
+		<string>com.apple.Passwords</string>
+	</array>
+	<key>menuIcon</key>
+	<string>clipboard</string>
+	<key>migrations</key>
+	<dict>
+		<key>2024-07-01-version-2</key>
+		<true/>
+		<key>2025-07-04-add-jpeg-heic</key>
+		<true/>
+	</dict>
+	<key>previewWidth</key>
+	<real>400</real>
+	<key>showFooter</key>
+	<true/>
+	<key>showSearch</key>
+	<true/>
+	<key>showTitle</key>
+	<true/>
+	<key>windowSize</key>
+	<string>[450,800]</string>
+</dict>
+</plist>
