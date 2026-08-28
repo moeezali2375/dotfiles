@@ -18,6 +18,15 @@ alias astro-nvim='NVIM_APPNAME=astro-nvim nvim'
 alias brew-dump='brew bundle dump --file=~/dotfiles/brew/Brewfile --force --no-vscode'
 alias brew-install='brew bundle --file=~/dotfiles/brew/Brewfile --force'
 
+# stats
+alias stats-dump='defaults export eu.exelban.Stats ~/dotfiles/stats/eu.exelban.Stats.plist && plutil -convert xml1 ~/dotfiles/stats/eu.exelban.Stats.plist'
+alias stats-load='defaults import eu.exelban.Stats ~/dotfiles/stats/eu.exelban.Stats.plist && killall Stats 2>/dev/null; open -a Stats'
+
+# rectangle
+alias rectangle-dump='defaults export com.knollsoft.Rectangle ~/dotfiles/rectangle/com.knollsoft.Rectangle.plist && plutil -convert xml1 ~/dotfiles/rectangle/com.knollsoft.Rectangle.plist'
+alias rectangle-load='defaults import com.knollsoft.Rectangle ~/dotfiles/rectangle/com.knollsoft.Rectangle.plist && killall Rectangle 2>/dev/null; open -a Rectangle'
+
+
 # Gitignore generator
 gi() { curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$@" ; }
 

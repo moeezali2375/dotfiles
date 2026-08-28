@@ -1,3 +1,5 @@
 \.DS_Store$
-.DS_Store
-\readme.md
+\.gitignore$
+(?i)^.*readme(\.md)?$
+.*\.plist$
+(?i)^.*Brewfile.*$
