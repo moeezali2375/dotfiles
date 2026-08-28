@@ -1,5 +1,4 @@
 tap "alexstrnik/browserino"
-tap "shivammathur/php"
 tap "xykong/tap"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
@@ -43,8 +42,6 @@ brew "glow"
 brew "go"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
-# Comprehensive RPC framework
-brew "ice"
 # Image loading and rendering library
 brew "imlib2"
 # Top clone for MySQL
@@ -113,6 +110,8 @@ cask "alexstrnik/browserino/browserino", trusted: true
 cask "cursor"
 # Universal database tool and SQL client
 cask "dbeaver-community"
+# Voice and text chat software
+cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Per-application volume mixer, equalizer, and audio router
@@ -125,6 +124,8 @@ cask "font-cousine-nerd-font"
 cask "font-hack-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Native desktop AI assistant from Google
+cask "google-gemini"
 # Laravel and PHP development environment manager
 cask "herd"
 # Convert your caps lock key or any of your modifier keys to the hyper key
@@ -145,12 +146,24 @@ cask "mongodb-compass"
 cask "ngrok"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Client program for the OpenVPN Access Server
+cask "openvpn-connect"
+# App wrapper for Postgres
+cask "postgres-app"
+# Peer to peer Bitorrent client
+cask "qbittorrent"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # App that enables mouse-free UI interaction
 cask "shortcat"
+# Music streaming service
+cask "spotify"
+# System monitor for the menu bar
+cask "stats"
 # Git client
 cask "sublime-merge"
+# Menu bar manager
+cask "thaw"
 # Multiplayer code editor
 cask "zed"
 go "github.com/bootdotdev/bootdev"
