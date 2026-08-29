@@ -28,6 +28,8 @@ brew "php", restart_service: :changed, link: false
 brew "composer"
 # Isolated development environments using Docker
 brew "docker-compose"
+# Tool for managing dock items
+brew "dockutil"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU compiler collection

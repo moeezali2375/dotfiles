@@ -42,11 +42,12 @@ alias thaw-load='defaults import com.stonerl.Thaw ~/dotfiles/thaw/com.stonerl.Th
 alias shortcat-dump='defaults export com.sproutcube.Shortcat ~/dotfiles/shortcat/com.sproutcube.Shortcat.plist && plutil -convert xml1 ~/dotfiles/shortcat/com.sproutcube.Shortcat.plist'
 alias shortcat-load='defaults import com.sproutcube.Shortcat ~/dotfiles/shortcat/com.sproutcube.Shortcat.plist && killall Shortcat 2>/dev/null; open -a Shortcat'
 
+# macOS System Settings
+alias macos-apply='~/dotfiles/macos/set-defaults.sh'
 
 # Gitignore generator
 gi() { curl -sLw "\n" "https://www.toptal.com/developers/gitignore/api/$@" ; }
 
 #git
 alias gs='git status'
-
 
