@@ -30,7 +30,6 @@ return {
   'shfmt',
   'golangci-lint',
   'intelephense',
-  'tree-sitter-cli',
   'prettierd',
   'shellcheck',
   'pyright',

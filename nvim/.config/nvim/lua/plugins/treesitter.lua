@@ -2,11 +2,15 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
-    build = ':TSUpdate', -- Command to run after installation to fetch parsers
-    main = 'nvim-treesitter.configs', -- Explicitly set the main module for options
-    opts = {
-      ensure_installed = { -- List of languages to install parsers for
+    branch = 'main',
+    lazy = false,
+    build = ':TSUpdate',
+    config = function()
+      local ts = require('nvim-treesitter')
+      ts.setup({
+        install_dir = vim.fn.stdpath('data') .. '/site',
+      })
+      local ensure_installed = {
         'bash',
         'c',
         'diff',
@@ -18,23 +22,30 @@ return {
         'query',
         'vim',
         'vimdoc',
-        -- Add more languages as needed, e.g.:
-        -- 'javascript', 'typescript', 'python', 'rust', 'go', 'json', 'yaml', 'css'
-      },
-      auto_install = true, -- Automatically install missing parsers
-      highlight = {
-        enable = true, -- Enable Treesitter syntax highlighting
-        -- Some languages may rely on Vim's regex highlighting for certain aspects.
-        -- Add them here if you notice issues.
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = {
-        enable = true, -- Enable Treesitter-based indentation
-        disable = { 'ruby' }, -- Disable Treesitter indentation for certain languages if problematic
-      },
-    },
-    -- You can add other Treesitter-related modules here, for example:
-    -- 'nvim-treesitter/nvim-treesitter-context', -- Shows current function/class context
-    -- 'nvim-treesitter/nvim-treesitter-textobjects', -- Extends text objects (e.g., `vaF` for "around function")
+      }
+      ts.install(ensure_installed)
+
+      -- Automatically install missing parsers when opening a new filetype
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('treesitter_auto_install', { clear = true }),
+        callback = function(args)
+          local ft = args.match
+          if not ft or ft == '' then
+            return
+          end
+
+          local lang = vim.treesitter.language.get_lang(ft) or ft
+          local available = ts.get_available()
+
+          if vim.list_contains(available, lang) then
+            local installed = ts.get_installed()
+            if not vim.list_contains(installed, lang) then
+              ts.install(lang)
+            end
+          end
+        end,
+        desc = 'Automatically install missing Treesitter parsers on FileType',
+      })
+    end,
   },
 }

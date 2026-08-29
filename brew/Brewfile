@@ -86,6 +86,8 @@ brew "ripgrep"
 brew "stow"
 # Terminal multiplexer
 brew "tmux"
+# Parser generator tool and incremental parsing library CLI
+brew "tree-sitter-cli"
 # CLI tool that moves files or folder to the trash
 brew "trash"
 # Language for application scale JavaScript development
