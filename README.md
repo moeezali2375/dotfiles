@@ -21,9 +21,12 @@ My personal macOS configuration files, development environment, and system prefe
   - [Step 10: Apply macOS System Preferences](#step-10-apply-macos-system-preferences)
   - [Step 11: Build Routers & Load App Settings](#step-11-build-routers--load-app-settings)
   - [Step 12: Configure Keychain Secrets (Optional)](#step-12-configure-keychain-secrets-optional)
+- [🔄 Updating an Existing Mac (Syncing Changes)](#-updating-an-existing-mac-syncing-changes)
+  - [Quick One-Command Update](#quick-one-command-update)
+  - [Detailed Step-by-Step Update](#detailed-step-by-step-update)
 - [Repository Structure](#-repository-structure)
 - [Daily Workflow & Helper Commands](#-daily-workflow--helper-commands)
-  - [Homebrew Maintenance](#homebrew-maintenance)
+  - [Dotfiles & Homebrew Maintenance](#dotfiles--homebrew-maintenance)
   - [Application Settings Sync](#application-settings-sync)
   - [Quick Navigation & Shortcuts](#quick-navigation--shortcuts)
 
@@ -270,6 +273,95 @@ security add-generic-password -a "$USER" -s "github_token" -w "<YOUR_GITHUB_TOKE
 
 ---
 
+## 🔄 Updating an Existing Mac (Syncing Changes)
+
+If you already have this repository cloned and configured on a Mac, follow this section whenever you pull updates so that **all newly added packages, casks, plugins, Swift routers, and symlinks are automatically installed and synced**.
+
+### Quick One-Command Update
+
+Run the update alias from any terminal session:
+
+```bash
+dot-update
+```
+
+*Or run the combined command directly:*
+```bash
+cd ~/dotfiles && git pull && brew bundle --file=~/dotfiles/brew/Brewfile && stow --restow alacritty astro-nvim gh git nvim tmux zed zsh && source ~/.zshrc
+```
+
+---
+
+### Detailed Step-by-Step Update
+
+If you prefer executing steps individually or want full control over each component:
+
+#### Step 1: Pull the Latest Changes
+```bash
+cd ~/dotfiles
+git pull
+```
+
+#### Step 2: Auto-Install Newly Added Brew Packages & Casks
+```bash
+brew-install
+# or: brew bundle --file=~/dotfiles/brew/Brewfile
+```
+> [!NOTE]
+> `brew bundle` is idempotent. It skips already installed tools and automatically downloads and installs any **newly added** CLI tools, GUI applications, and fonts specified in `brew/Brewfile`.
+
+#### Step 3: Re-Stow Symlinks (`stow --restow`)
+```bash
+cd ~/dotfiles
+stow --restow alacritty astro-nvim gh git nvim tmux zed zsh
+```
+> [!TIP]
+> The `--restow` flag prunes stale symlinks and automatically links newly added configuration folders (e.g. `zed/`, `astro-nvim/`, `gh/`) or new subdirectories into your `$HOME`.
+
+#### Step 4: Reload Shell Configuration
+```bash
+source ~/.zshrc
+```
+
+#### Step 5: Sync Neovim Plugins & Mason Tooling
+Launch Neovim to trigger automatic updates:
+```bash
+nvim
+```
+- **Lazy.nvim** will automatically download and install new plugins.
+- **Mason.nvim** will automatically install any newly added LSPs, linters, or formatters from `nvim/.config/nvim/lua/mason-packages.lua`.
+- *(Optional headless command)*: `nvim --headless "+Lazy! sync" +qa`
+
+#### Step 6: Update Tmux Plugins
+- Inside a Tmux session, press `Ctrl + b` then `Shift + I` (`Ctrl+b` + `I`) to install new plugins, or `Ctrl + b` then `U` to update existing plugins.
+- Or trigger TPM via CLI:
+  ```bash
+  ~/.tmux/plugins/tpm/bin/install_plugins
+  ~/.tmux/plugins/tpm/bin/update_plugins all
+  ```
+
+#### Step 7: Build New Swift Routers & Load App Settings
+If new app preferences or URL routers were updated, compile the native Swift helpers and reload `.plist` configurations:
+```bash
+# 1. Build Swift apps & reload Browserino routing
+browserino-load
+
+# 2. Reload application preferences (.plist)
+rectangle-load
+maccy-load
+stats-load
+thaw-load
+shortcat-load
+```
+
+#### Step 8: Re-apply macOS System Preferences (Optional)
+If macOS defaults were modified in `macos/set-defaults.sh`:
+```bash
+macos-apply
+```
+
+---
+
 ## 📁 Repository Structure
 
 ```
@@ -318,10 +410,11 @@ dotfiles/
 
 The repository includes convenient aliases defined in `zsh/.aliases.zsh`:
 
-### Homebrew Maintenance
+### Dotfiles & Homebrew Maintenance
 
 | Command | Action |
 | :--- | :--- |
+| `dot-update` | Pulls latest git changes, installs new Brew formulas/casks, restows configs, and reloads Zsh |
 | `brew-install` | Installs/syncs packages from `~/dotfiles/brew/Brewfile` |
 | `brew-dump` | Dumps currently installed packages and casks into `Brewfile` |
 
