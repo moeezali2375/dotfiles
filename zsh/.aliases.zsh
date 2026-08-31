@@ -15,7 +15,7 @@ alias c="clear"
 alias astro-nvim='NVIM_APPNAME=astro-nvim nvim'
 
 # dotfiles update & sync
-alias dot-update='cd ~/dotfiles && git pull && brew bundle --file=~/dotfiles/brew/Brewfile && stow --restow alacritty astro-nvim gh git nvim tmux zed zsh && source ~/.zshrc'
+alias dot-update='cd ~/dotfiles && git pull && brew bundle --file=~/dotfiles/brew/Brewfile && stow --restow alacritty astro-nvim gemini gh git nvim tmux zed zsh && source ~/.zshrc'
 
 # brew
 alias brew-dump='brew bundle dump --file=~/dotfiles/brew/Brewfile --force --no-vscode'

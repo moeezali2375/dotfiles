@@ -25,6 +25,7 @@ My personal macOS configuration files, development environment, and system prefe
   - [Quick One-Command Update](#quick-one-command-update)
   - [Detailed Step-by-Step Update](#detailed-step-by-step-update)
 - [Repository Structure](#-repository-structure)
+- [🤖 Gemini & Antigravity Configuration](#-gemini--antigravity-configuration)
 - [Daily Workflow & Helper Commands](#-daily-workflow--helper-commands)
   - [Dotfiles & Homebrew Maintenance](#dotfiles--homebrew-maintenance)
   - [Application Settings Sync](#application-settings-sync)
@@ -41,6 +42,7 @@ This repository configures a complete macOS development workstation featuring:
 - **Terminal Multiplexer:** [Tmux](https://github.com/tmux/tmux) with TPM, Tokyo Night theme, vi keybindings, and automatic session persistence.
 - **macOS Utilities:** [Rectangle](https://rectangleapp.com/) (window management), [Maccy](https://maccy.app/) (clipboard manager), [Stats](https://github.com/exelban/stats) (menu bar metrics), [Thaw](https://github.com/stonerl/Thaw) (menu bar organizer), [Shortcat](https://shortcat.app/) (keyboard navigation), and [Browserino](https://github.com/AlexStrNik/Browserino) (URL routing).
 - **Custom URL Handlers:** Native Swift helper apps for ClickUp deep links and Google Chrome Work profile routing.
+- **AI Agent Customizations:** Global & workspace configuration for Google Gemini and Antigravity.
 
 ---
 
@@ -118,7 +120,7 @@ brew bundle --file=~/dotfiles/brew/Brewfile
 - **Runtimes & Dev:** `nvm`, `pyenv`, `go`, `php@8.4`, `composer`, `luarocks`, `typescript`, `yarn`, `docker-compose`
 - **Databases & Servers:** `mysql@8.0`, `redis`, `nginx`
 - **Fonts:** `font-hack-nerd-font`, `font-cousine-nerd-font`
-- **GUI Applications:** `alacritty`, `ghostty`, `zed`, `cursor`, `rectangle`, `maccy`, `shortcat`, `stats`, `thaw`, `browserino`, `docker-desktop`, `postgres-app`, `dbeaver-community`, `beekeeper-studio`, `obsidian`, `spotify`, `iina`, `lulu`, `keycastr`, `herd`, `hyperkey`, `sublime-merge`
+- **GUI Applications:** `google-gemini`, `alacritty`, `ghostty`, `zed`, `cursor`, `rectangle`, `maccy`, `shortcat`, `stats`, `thaw`, `browserino`, `docker-desktop`, `postgres-app`, `dbeaver-community`, `beekeeper-studio`, `obsidian`, `spotify`, `iina`, `lulu`, `keycastr`, `herd`, `hyperkey`, `sublime-merge`
 
 ---
 
@@ -128,7 +130,7 @@ Symlink configuration folders into `$HOME`:
 
 ```bash
 cd ~/dotfiles
-stow alacritty astro-nvim gh git nvim tmux zed zsh
+stow alacritty astro-nvim gemini gh git nvim tmux zed zsh
 ```
 
 > [!NOTE]
@@ -287,7 +289,7 @@ dot-update
 
 *Or run the combined command directly:*
 ```bash
-cd ~/dotfiles && git pull && brew bundle --file=~/dotfiles/brew/Brewfile && stow --restow alacritty astro-nvim gh git nvim tmux zed zsh && source ~/.zshrc
+cd ~/dotfiles && git pull && brew bundle --file=~/dotfiles/brew/Brewfile && stow --restow alacritty astro-nvim gemini gh git nvim tmux zed zsh && source ~/.zshrc
 ```
 
 ---
@@ -313,7 +315,7 @@ brew-install
 #### Step 3: Re-Stow Symlinks (`stow --restow`)
 ```bash
 cd ~/dotfiles
-stow --restow alacritty astro-nvim gh git nvim tmux zed zsh
+stow --restow alacritty astro-nvim gemini gh git nvim tmux zed zsh
 ```
 > [!TIP]
 > The `--restow` flag prunes stale symlinks and automatically links newly added configuration folders (e.g. `zed/`, `astro-nvim/`, `gh/`) or new subdirectories into your `$HOME`.
@@ -366,6 +368,10 @@ macos-apply
 
 ```
 dotfiles/
+├── .agents/                 # Workspace customizations for Gemini / Antigravity
+│   ├── rules/               # Workspace-specific rules and guidelines
+│   ├── skills/              # Workspace-specific skills & runbooks
+│   └── skills.json          # Workspace skills registry
 ├── alacritty/               # Alacritty terminal config & Coolnight theme
 │   └── .config/alacritty/
 ├── astro-nvim/              # AstroNvim v5 alternative configuration
@@ -376,6 +382,11 @@ dotfiles/
 │   ├── ChromeWork/          # Swift launcher for Google Chrome Work profile
 │   ├── ClickUpRouter/       # Swift deep linker for ClickUp native app
 │   └── xyz.alexstrnik.Browserino.plist
+├── gemini/                  # Global Gemini / Antigravity configuration (Stow package)
+│   └── .gemini/config/
+│       ├── rules/           # Global developer rules (global-rules.md)
+│       ├── skills/          # Global custom skills directory
+│       └── skills.json      # Global skills registry
 ├── gh/                      # GitHub CLI configuration
 │   └── .config/gh/
 ├── git/                     # Git configurations
@@ -403,6 +414,35 @@ dotfiles/
 │   └── .zshrc               # Interactive shell setup (plugins, fzf, vi mode)
 └── .stow-global-ignore      # Ignored patterns for GNU Stow
 ```
+
+---
+
+## 🤖 Gemini & Antigravity Configuration
+
+This repository provides both machine-wide and workspace-level configuration for [Google Gemini](https://gemini.google.com/) and [Antigravity](https://antigravity.google/) AI coding assistants.
+
+### 1. Global Configuration (`gemini/` Stow Package)
+Symlinked to `~/.gemini/config/` via `stow gemini`. These settings apply across all projects and repositories on your machine:
+- **Global Rules (`rules/global-rules.md`)**: Machine-wide developer guidelines loaded automatically by agent sessions:
+  - **Implementation Plan**: Always formulate and present a clear plan before modifying code.
+  - **Code Quality**: Write clean, modern, well-typed, and modular code following project-specific conventions.
+  - **Documentation**: Keep documentation, docstrings, and READMEs updated alongside code changes.
+  - **Safety**: Never commit hardcoded secrets, passwords, or personal access tokens to version control.
+  - **Validation**: Verify changes with relevant tests, lint checks, or builds prior to completing tasks.
+- **Global Skills Registry (`skills.json`)**: Configured to discover and index global custom skills located in `~/.gemini/config/skills/`.
+
+### 2. Workspace Customizations (`.agents/`)
+Project-specific customizations tracked in git for this repository:
+- **`.agents/rules/`**: Contextual rules and guidelines specific to managing dotfiles, symlinks, and macOS preferences.
+- **`.agents/skills/`**: Domain-specific skills, multi-step runbooks, and automation workflows.
+- **`.agents/skills.json`**: Workspace skills registry pointing to `.agents/skills`.
+
+### Loading Priority & Precedence
+Antigravity discovers and loads customizations in a hierarchical order (highest to lowest priority):
+1. **Workspace Project**: Hierarchical discovery walking up from the current directory to the repository root (`.agents/`).
+2. **Declared Configurations**: Customizations explicitly registered in workspace `skills.json`.
+3. **Global Discovery**: Machine-wide configuration symlinked by Stow into `~/.gemini/config/`.
+4. **Built-in Customizations**: Default skills and toolsets bundled with Antigravity / Gemini CLI.
 
 ---
 
