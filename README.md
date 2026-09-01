@@ -196,6 +196,48 @@ pip --version
    - `tmux-continuum`
    - `tmux-powerkit` (Tokyo Night theme)
 
+> [!TIP]
+> **Headless Plugin Installation (CLI)**:
+> If setting up on a remote server without interactive keybindings, install plugins directly via CLI:
+> ```bash
+> ~/.tmux/plugins/tpm/bin/install_plugins
+> ```
+
+#### 🐧 Linux / Ubuntu / EC2 Setup Notes
+When deploying your `.tmux.conf` to a Linux server or Ubuntu EC2 instance:
+
+1. **Install Prerequisites**:
+   ```bash
+   # Ubuntu / Debian
+   sudo apt update && sudo apt install -y tmux git bc
+
+   # Amazon Linux 2023 / Fedora / RHEL
+   sudo dnf install -y tmux git bc
+   ```
+   *(The `bc` utility is required for `tmux-powerkit` to calculate CPU and memory metrics).*
+
+2. **Bash 5.2+ Requirement for `tmux-powerkit`**:
+   `tmux-powerkit` requires **Bash 5.2+**. While macOS (via Homebrew) and Ubuntu 24.04 LTS ship with Bash 5.2+, **Ubuntu 22.04 LTS** defaults to Bash 5.1 in `apt`.
+   - On **Ubuntu 22.04 LTS**, compile and install Bash 5.2 into `/usr/local/bin`:
+     ```bash
+     sudo apt update && sudo apt install -y build-essential libncurses-dev bison texinfo wget
+     cd /tmp
+     wget https://ftp.gnu.org/gnu/bash/bash-5.2.tar.gz
+     tar -xzf bash-5.2.tar.gz
+     cd bash-5.2
+     ./configure --prefix=/usr/local
+     make -j$(nproc)
+     sudo make install
+     ```
+   - Verify version:
+     ```bash
+     /usr/local/bin/bash --version  # Must report 5.2+
+     ```
+   - Restart the tmux server to load the theme:
+     ```bash
+     tmux kill-server && tmux
+     ```
+
 ---
 
 ### Step 9: Initialize Neovim & Mason Tooling
