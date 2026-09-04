@@ -470,6 +470,7 @@ Symlinked to `~/.gemini/config/` via `stow gemini`. These settings apply across 
   - **Code Quality**: Write clean, modern, well-typed, and modular code following project-specific conventions.
   - **Documentation**: Keep documentation, docstrings, and READMEs updated alongside code changes.
   - **Safety**: Never commit hardcoded secrets, passwords, or personal access tokens to version control.
+  - **Git Operations**: Never execute git write commands without explicit confirmation; always suggest a commit message for approval first.
   - **Validation**: Verify changes with relevant tests, lint checks, or builds prior to completing tasks.
 - **Global Skills Registry (`skills.json`)**: Configured to discover and index global custom skills located in `~/.gemini/config/skills/`.
 
