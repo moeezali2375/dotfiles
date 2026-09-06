@@ -86,10 +86,10 @@ brew "ripgrep"
 brew "stow"
 # Terminal multiplexer
 brew "tmux"
-# Parser generator tool and incremental parsing library CLI
-brew "tree-sitter-cli"
 # CLI tool that moves files or folder to the trash
 brew "trash"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Language for application scale JavaScript development
 brew "typescript"
 # JavaScript package manager
@@ -110,6 +110,8 @@ cask "anydesk"
 cask "beekeeper-studio"
 # Browserino is a tiny browser selector for MacOS written in SwiftUI
 cask "alexstrnik/browserino/browserino", trusted: true
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Universal database tool and SQL client
@@ -136,6 +138,8 @@ cask "hyperkey"
 cask "iina"
 # Open-source keystroke visualiser
 cask "keycastr"
+# WordPress local development tool by Flywheel
+cask "local"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
 # Clipboard manager
