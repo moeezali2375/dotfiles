@@ -30,6 +30,7 @@ return {
         postgresql = { 'sql_formatter' },
         php = { 'pint', 'intelephense', stop_after_first = true },
         nginx = { 'nginxfmt' },
+        swift = { 'swiftformat', 'swift_format', lsp_format = 'fallback', stop_after_first = true },
       },
 
       formatters = {

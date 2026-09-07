@@ -96,6 +96,18 @@ return {
           end,
           filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
         },
+        sourcekit = {
+          cmd = { 'sourcekit-lsp' },
+          filetypes = { 'swift', 'c', 'cpp', 'objective-c', 'objective-cpp' },
+          root_dir = function(bufnr_or_fname, on_dir)
+            local fname = type(bufnr_or_fname) == 'number' and vim.api.nvim_buf_get_name(bufnr_or_fname) or bufnr_or_fname
+            local root = require('lspconfig.util').root_pattern('buildServer.json', '*.xcodeproj', '*.xcworkspace', 'Package.swift', '.git')(fname)
+            if type(on_dir) == 'function' then
+              on_dir(root)
+            end
+            return root
+          end,
+        },
       }
 
       -- Mason setup for managing LSP servers and tools
@@ -128,16 +140,30 @@ return {
 
       require('mason-auto-sync').setup()
 
-      -- Configure mason-lspconfig to set up LSP servers
+      -- Load lspconfig defaults into vim.lsp.config
+      local lspconfig = require('lspconfig')
+
+      -- Configure mason-lspconfig to set up LSP servers using native vim.lsp APIs
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
-            local server = servers[server_name] or {}
+            local default_config = vim.lsp.config[server_name] or {}
+            local user_config = servers[server_name] or {}
+            local server = vim.tbl_deep_extend('force', default_config, user_config)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config(server_name, server)
+            vim.lsp.enable(server_name)
           end,
         },
       }
+
+      -- Explicit setup for system-installed sourcekit-lsp (not managed by Mason)
+      local default_sourcekit = vim.lsp.config.sourcekit or {}
+      local user_sourcekit = servers.sourcekit or {}
+      local sourcekit_opts = vim.tbl_deep_extend('force', default_sourcekit, user_sourcekit)
+      sourcekit_opts.capabilities = vim.tbl_deep_extend('force', {}, capabilities, sourcekit_opts.capabilities or {})
+      vim.lsp.config('sourcekit', sourcekit_opts)
+      vim.lsp.enable('sourcekit')
     end,
   },
 }
