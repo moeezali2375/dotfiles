@@ -1,3 +1,8 @@
+---
+trigger: always_on
+description: Core developer principles: implementation planning, code quality, safety, git workflow, and validation.
+---
+
 # Global Developer Rules
 
 - **Implementation Plan First**: Always present a clear, detailed implementation plan and obtain alignment before writing, editing, or modifying any code.

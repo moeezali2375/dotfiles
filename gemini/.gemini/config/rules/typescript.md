@@ -1,3 +1,9 @@
+---
+trigger: glob
+globs: *.ts, *.tsx, *.mts, *.cts
+description: TypeScript type safety, strict typing standards, and compiler directive guidelines.
+---
+
 # TypeScript Type Safety & Standards
 
 Guidelines and rules for writing type-safe TypeScript code.
