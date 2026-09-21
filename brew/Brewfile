@@ -166,8 +166,6 @@ cask "spotify"
 cask "stats"
 # Git client
 cask "sublime-merge"
-# Menu bar manager
-cask "thaw"
 # Multiplayer code editor
 cask "zed"
 go "github.com/bootdotdev/bootdev"

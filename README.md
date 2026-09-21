@@ -40,7 +40,7 @@ This repository configures a complete macOS development workstation featuring:
 - **Terminal & Shell:** [Alacritty](https://alacritty.org/) / [Ghostty](https://ghostty.org/) + [Zsh](https://www.zsh.org/) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k) + vi-mode + auto-suggestions + syntax highlighting + [fzf](https://github.com/junegunn/fzf).
 - **Editors:** [Neovim](https://neovim.io/) (custom [lazy.nvim](https://github.com/folke/lazy.nvim) setup + [AstroNvim](https://astronvim.com/) alternative) & [Zed](https://zed.dev/).
 - **Terminal Multiplexer:** [Tmux](https://github.com/tmux/tmux) with TPM, Tokyo Night theme, vi keybindings, and automatic session persistence.
-- **macOS Utilities:** [Rectangle](https://rectangleapp.com/) (window management), [Maccy](https://maccy.app/) (clipboard manager), [Stats](https://github.com/exelban/stats) (menu bar metrics), [Thaw](https://github.com/stonerl/Thaw) (menu bar organizer), [Shortcat](https://shortcat.app/) (keyboard navigation), and [Browserino](https://github.com/AlexStrNik/Browserino) (URL routing).
+- **macOS Utilities:** [Rectangle](https://rectangleapp.com/) (window management), [Maccy](https://maccy.app/) (clipboard manager), [Stats](https://github.com/exelban/stats) (menu bar metrics), [Shortcat](https://shortcat.app/) (keyboard navigation), and [Browserino](https://github.com/AlexStrNik/Browserino) (URL routing).
 - **Custom URL Handlers:** Native Swift helper apps for ClickUp deep links and Google Chrome Work profile routing.
 - **AI Agent Customizations:** Global & workspace configuration for Google Gemini and Antigravity.
 
@@ -120,7 +120,7 @@ brew bundle --file=~/dotfiles/brew/Brewfile
 - **Runtimes & Dev:** `nvm`, `pyenv`, `go`, `php@8.4`, `composer`, `luarocks`, `typescript`, `yarn`, `docker-compose`
 - **Databases & Servers:** `mysql@8.0`, `redis`, `nginx`
 - **Fonts:** `font-hack-nerd-font`, `font-cousine-nerd-font`
-- **GUI Applications:** `google-gemini`, `alacritty`, `ghostty`, `zed`, `cursor`, `rectangle`, `maccy`, `shortcat`, `stats`, `thaw`, `browserino`, `docker-desktop`, `postgres-app`, `dbeaver-community`, `beekeeper-studio`, `obsidian`, `spotify`, `iina`, `lulu`, `keycastr`, `herd`, `hyperkey`, `sublime-merge`
+- **GUI Applications:** `google-gemini`, `alacritty`, `ghostty`, `zed`, `cursor`, `rectangle`, `maccy`, `shortcat`, `stats`, `browserino`, `docker-desktop`, `postgres-app`, `dbeaver-community`, `beekeeper-studio`, `obsidian`, `spotify`, `iina`, `lulu`, `keycastr`, `herd`, `hyperkey`, `sublime-merge`
 
 ---
 
@@ -294,10 +294,7 @@ maccy-load
 # 4. Menu bar system monitor layout
 stats-load
 
-# 5. Menu bar icon organizer settings
-thaw-load
-
-# 6. Keyboard UI navigation settings
+# 5. Keyboard UI navigation settings
 shortcat-load
 ```
 
@@ -394,7 +391,6 @@ browserino-load
 rectangle-load
 maccy-load
 stats-load
-thaw-load
 shortcat-load
 ```
 
@@ -443,7 +439,6 @@ dotfiles/
 ├── rectangle/               # Rectangle window manager preferences plist
 ├── shortcat/                # Shortcat keyboard navigation preferences plist
 ├── stats/                   # Stats menu bar system monitor preferences plist
-├── thaw/                    # Thaw menu bar manager preferences plist
 ├── tmux/                    # Tmux configuration (.tmux.conf)
 ├── zed/                     # Zed editor settings (Vim mode, themes)
 │   └── .config/zed/
@@ -512,7 +507,6 @@ Export or import macOS app preferences (`.plist` files) between your system and 
 | **Rectangle** | `rectangle-dump` | `rectangle-load` |
 | **Maccy** | `maccy-dump` | `maccy-load` |
 | **Stats** | `stats-dump` | `stats-load` |
-| **Thaw** | `thaw-dump` | `thaw-load` |
 | **Shortcat** | `shortcat-dump` | `shortcat-load` |
 
 ### Quick Navigation & Shortcuts
