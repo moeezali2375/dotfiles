@@ -1,0 +1,11 @@
+---
+description: Strict implementation plan hard-stop — mirror Gemini/Antigravity behavior. No edits until the user approves a plan in a subsequent turn.
+alwaysApply: true
+---
+
+# Strict Implementation Plan Requirement (Mandatory Hard Stop)
+
+- **Zero Modifications Without Prior Approval**: You are STRICTLY FORBIDDEN from creating, editing, overwriting, or deleting any files, or running state-altering shell commands, until you have presented a detailed implementation plan and received explicit user confirmation in a subsequent turn.
+- **No Same-Turn Edits**: NEVER propose a plan and execute file modifications within the same turn. You must present the plan and immediately STOP calling tools to wait for the user's response.
+- **Plan Format**: Outline the target files, summary of proposed changes, design decisions/trade-offs, and verification steps.
+- **Read-Only Exploration Allowed**: You may freely inspect, search, and read non-secret codebase files while preparing the plan.
