@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": "/Users/moeezaliv5/.cursor/hooks/git-guard.sh",
+        "matcher": "git",
+        "timeout": 5
+      }
+    ]
+  }
+}
