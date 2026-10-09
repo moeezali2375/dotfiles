@@ -13,7 +13,10 @@ return {
     }
 
     -- Then setup breadcrumbs
-    require('breadcrumbs').setup {
+    local breadcrumbs = require('breadcrumbs')
+    table.insert(breadcrumbs.winbar_filetype_exclude, 'csv')
+    table.insert(breadcrumbs.winbar_filetype_exclude, 'tsv')
+    breadcrumbs.setup {
       -- optional configs
       -- disable_on_invalid_context = true,
       -- winbar = true,  -- enable winbar integration

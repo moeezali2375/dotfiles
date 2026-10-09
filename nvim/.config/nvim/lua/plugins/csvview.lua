@@ -4,7 +4,17 @@ return {
   ---@type CsvView.Options
   opts = {
     parser = { comments = { '#', '//' } },
-    view = { display_mode = 'border' },
+    view = {
+      display_mode = 'border',
+      header_lnum = 1,
+      sticky_header = {
+        enabled = true,
+      },
+      sticky_columns = {
+        enabled = true,
+        count = 1,
+      },
+    },
     keymaps = {
       -- Text objects for selecting fields
       textobject_field_inner = { 'if', mode = { 'o', 'x' } },
