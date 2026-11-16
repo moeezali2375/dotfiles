@@ -31,7 +31,7 @@ alias rectangle-load='defaults import com.knollsoft.Rectangle ~/dotfiles/rectang
 
 # browserino
 alias browserino-dump='defaults export xyz.alexstrnik.Browserino ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist && plutil -convert xml1 ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist'
-alias browserino-load='[ -d /Applications/ClickUpRouter.app ] || ~/dotfiles/browserino/ClickUpRouter/build.sh; [ -d "/Applications/Chrome (Work).app" ] || ~/dotfiles/browserino/ChromeWork/build.sh; defaults import xyz.alexstrnik.Browserino ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist && killall Browserino 2>/dev/null; open -a Browserino'
+alias browserino-load='[ -d /Applications/ClickUpRouter.app ] || ~/dotfiles/browserino/ClickUpRouter/build.sh; [ -d "/Applications/Chrome (Work).app" ] || ~/dotfiles/browserino/ChromeWork/build.sh; [ -d "/Applications/Chrome (Personal).app" ] || ~/dotfiles/browserino/ChromePersonal/build.sh; defaults import xyz.alexstrnik.Browserino ~/dotfiles/browserino/xyz.alexstrnik.Browserino.plist && killall Browserino 2>/dev/null; open -a Browserino'
 
 # maccy
 alias maccy-dump='defaults export org.p0deje.Maccy ~/dotfiles/maccy/org.p0deje.Maccy.plist && plutil -convert xml1 ~/dotfiles/maccy/org.p0deje.Maccy.plist'

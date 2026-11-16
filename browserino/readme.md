@@ -10,9 +10,17 @@ This directory contains the configuration for [Browserino](https://github.com/Al
 ## Browser Picker & Shortcuts
 
 When opening unrouted links, Browserino prompts you to pick a browser:
-- `G` / Click **Google Chrome**: Opens in the default/personal profile (`moeezali2375@gmail.com`).
-- `W` / Click **Chrome (Work)**: Opens in the work profile (`moeez.ali@dubizzlelabs.com`).
+- `G` / Click **Google Chrome**: Opens in whichever Chrome profile was last used.
+- `P` / Click **Chrome (Personal)**: Always opens in the personal profile (`Default` - `moeezali2375@gmail.com`).
+- `W` / Click **Chrome (Work)**: Always opens in the work profile (`Profile 1` - `moeez.ali@dubizzlelabs.com`).
 - `S` / Click **Safari**: Opens in Safari.
+
+## Chrome Profile Launchers
+
+`Chrome (Personal).app` and `Chrome (Work).app` are tiny background-only apps built from the shared `ChromeProfile/main.swift`. Each reads its Chrome profile folder from the `ChromeProfileDirectory` key in its own `Info.plist`, hands all URLs to Chrome in a single `posix_spawn`, and quits right away (no fixed delays). Launched without a URL (Spotlight, Dock, Finder), it opens a new Chrome window in that profile.
+
+- **Rebuild**: `ChromePersonal/build.sh` / `ChromeWork/build.sh` (both call `ChromeProfile/build.sh`).
+- **Add another profile**: copy `ChromePersonal/`, change the bundle ID, name, executable and `ChromeProfileDirectory` in `Info.plist`, and update the names in `build.sh`. Profile folder names are listed in `~/Library/Application Support/Google/Chrome/Local State` under `profile.info_cache`.
 
 ## Commands
 
