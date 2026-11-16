@@ -42,6 +42,7 @@ This repository configures a complete macOS development workstation featuring:
 - **Terminal Multiplexer:** [Tmux](https://github.com/tmux/tmux) with TPM, Tokyo Night theme, vi keybindings, and automatic session persistence.
 - **macOS Utilities:** [Rectangle](https://rectangleapp.com/) (window management), [Maccy](https://maccy.app/) (clipboard manager), [Stats](https://github.com/exelban/stats) (menu bar metrics), [Shortcat](https://shortcat.app/) (keyboard navigation), and [Browserino](https://github.com/AlexStrNik/Browserino) (URL routing).
 - **Custom URL Handlers:** Native Swift helper apps for ClickUp deep links and Google Chrome Work profile routing.
+- **AirPods Listening Mode:** Global hotkeys (via the Shortcuts app) that jump AirPods to Noise Cancellation / Transparency / Off.
 - **AI Agent Customizations:** Global & workspace configuration for Google Gemini and Antigravity.
 
 ---
@@ -412,12 +413,15 @@ dotfiles/
 │   └── skills.json          # Workspace skills registry
 ├── alacritty/               # Alacritty terminal config & Coolnight theme
 │   └── .config/alacritty/
+├── airpods/                 # AirPods listening-mode hotkey script (see airpods/readme.md)
 ├── astro-nvim/              # AstroNvim v5 alternative configuration
 │   └── .config/astro-nvim/
 ├── brew/                    # Homebrew dependencies bundle
 │   └── Brewfile
 ├── browserino/              # Browserino URL router configs & Swift helper builds
-│   ├── ChromeWork/          # Swift launcher for Google Chrome Work profile
+│   ├── ChromeProfile/       # Shared Swift launcher source + build script for Chrome profile apps
+│   ├── ChromePersonal/      # Chrome (Personal).app config (Default profile)
+│   ├── ChromeWork/          # Chrome (Work).app config (Profile 1)
 │   ├── ClickUpRouter/       # Swift deep linker for ClickUp native app
 │   └── xyz.alexstrnik.Browserino.plist
 ├── gemini/                  # Global Gemini / Antigravity configuration (Stow package)
