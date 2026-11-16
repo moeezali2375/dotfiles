@@ -1,3 +1,10 @@
 [user]
 	name = moeez-dubizzle
 	email = moeez.ali@dubizzlelabs.com
+	signingkey = ~/.ssh/github-dubizzle-moeez-ali-v5-signing.pub
+
+	[gpg]
+			format = ssh
+
+	[commit]
+			gpgsign = true
