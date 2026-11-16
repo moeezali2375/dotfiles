@@ -10,6 +10,9 @@ fi
 # Environment Setup
 # ------------------------------
 
+# Bitwarden SSH Agent
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+
 # Zsh History Configuration
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
